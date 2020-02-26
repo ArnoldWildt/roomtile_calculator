@@ -1,0 +1,96 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>Verlege Plan</title>
+    <meta name="description" content="Verlege Plan">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+
+</head>
+
+<body onresize="setup()">
+    <!--
+        Inputs:
+        Art der Verlegung -> Laminat / Fliesen
+        Verlegeart -> Symetrisch / Asymetrisch
+        Raumlänge -> meter
+        Raumbreite -> meter
+        Länge Panel -> cm
+        Breite Panel -> cm
+    -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.js"></script>
+    <script src="main.js"></script>
+    <script src="room.js"></script>
+    <center>
+
+        <div align="left" class="input_container">
+            Art der Verlegung
+            <select onchange="add_parameter()" id="tile_type" class="inputs_field_select" name="type">
+                <option value="Laminat">Laminat</option>
+                <option value="Fliesen">Fliesen</option>
+            </select>
+            <h6>&nbsp;</h6>
+            Minimum Länge
+            <input id="min_width" class="inputs_field" type="number" min="1" value="30">
+            <input id="input_unit" type="text" value="cm" disabled=true>
+        </div>
+
+        <div align="left" id="2nd_row" class="input_container">
+            Verlegeart
+            <select id="installation" class="inputs_field_select" name="type">
+                <option value="Symetrisch">Symetrisch</option>
+                <option value="Asymetrisch">Asymetrisch</option>
+
+            </select>
+        </div>
+        <div align="left" class="input_container">
+            Raumlänge
+            <input id="room_width" class="inputs_field" type="number" min="1" value="8.44">
+            <input id="input_unit" type="text" value="m" disabled=true>
+        </div>
+
+        <div align="left" class="input_container">
+            Raumbreite
+            <input id="room_height" class="inputs_field" type="number" min="1" value="4.36">
+            <input id="input_unit" type="text" value="m" disabled=true>
+        </div>
+
+        <div align="left" class="input_container">
+            Länge Panel
+            <input id="panel_width" class="inputs_field" type="number" min="1" value="186">
+            <input id="input_unit" type="text" value="cm" disabled=true>
+        </div>
+
+        <div align="left" class="input_container">
+            Breite Panel
+            <input id="panel_height" class="inputs_field" type="number" min="1" value="26">
+            <input id="input_unit" type="text" value="cm" disabled=true>
+        </div>
+
+        <div align="left" class="input_container">
+            <input type="button" onclick="calc_room()" value="Berechnen">
+        </div>
+
+    </center>
+    <div></div>
+
+    <div class="flip_container">
+        <div></div>
+        <input type="button" onclick="reverse_room()" value="Flip">
+    </div>
+
+    <div id="grid_container" class="grid_container">
+        <div class="left_list" id="left_list"></div>
+        <div class="left_over" id="left_over"></div>
+    </div>
+
+    <div></div>
+
+</body>
+
+</html>

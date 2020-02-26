@@ -1,0 +1,78 @@
+#input_unit {
+    margin-left: -25px;
+    width: 25px;
+    height: 30px;
+    text-align: center;
+    }
+
+.inputs_field {
+    width: calc(100% - 25px);
+    height: 30px;
+    text-align: right;
+    }
+
+.inputs_field_select {
+    width: 100%;
+    height: 30px;
+    text-align: right;
+    }
+
+.grid_container {
+    display: grid; 
+    grid-template-rows: 1fr 1fr; 
+    grid-template-columns: 4fr 6fr;
+}
+
+.flip_container {
+    display: grid; 
+    margin-top: -35px;
+    margin-bottom: -15px;
+    grid-template-rows: 40%; 
+    grid-template-columns: 3fr 6fr;
+}
+
+.input_container {
+    display: grid; 
+    grid-template-rows: 50%; 
+    grid-template-columns:2fr 2fr 1fr 2fr 2fr 1fr;
+}
+
+.left_list {
+    grid-column-start:1; 
+    grid-column-end:1; 
+    grid-row-start:1; 
+    grid-row-end:1; 
+}
+
+.left_over {
+    grid-column-start:1; 
+    grid-column-end:1; 
+    grid-row-start:2; 
+    grid-row-end:2; 
+}
+
+div {
+    height: 50px;
+    width: 80%;
+    }
+
+center {
+    padding: 24px 10px 10px 10px;
+    box-shadow: 1px 1px 5px #555555;
+}
+
+canvas {
+    grid: 100%;
+    grid-column-start:2; 
+    grid-column-end:2; 
+    grid-row-start:1; 
+    grid-row-end:2; 
+    box-shadow: 1px 1px 5px #555555;
+}
+
+body {
+      font-family: 'Roboto', sans-serif;
+    }
+
+
+
